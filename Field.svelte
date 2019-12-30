@@ -27,3 +27,9 @@
         <p class='help'>{help}</p>
     {/if}
 </fieldset>
+
+<style>
+    label {
+        text-transform: capitalize;
+    }
+</style>
