@@ -5,7 +5,7 @@
     export let label = name.replace('_', ' ')
     export let placeholder = name
     export let errors = []
-    export let help
+    export let help = ''
 </script>
 
 <fieldset class="field">
@@ -24,6 +24,6 @@
     {#if errors.length}
         <p class='error'>{errors[0]}</p>
     {:else if help}
-        <p class='help'>{errors[0]}</p>
+        <p class='help'>{help}</p>
     {/if}
 </fieldset>
