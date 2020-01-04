@@ -9,12 +9,14 @@
 </script>
 
 <fieldset class="field">
-    <label for={name}>{label}</label>
+    {#if label != 'display-none'}
+        <label for={name}>{label}</label>
+    {/if}
     <div class='control'>
         {#if type === 'text'}
-            <input type='text' {name} bind:value={value} {placeholder}>
+            <input type='text' {name} bind:value {placeholder}>
         {:else if type === 'password'}
-            <input type='password' {name} bind:value={value} {placeholder}>
+            <input type='password' {name} bind:value {placeholder}>
         {:else if type === 'hidden'}
             <input type='hidden' {name} bind:value={value} {placeholder}>
         {:else}
@@ -29,7 +31,7 @@
 </fieldset>
 
 <style>
-    label {
+    input::placeholder, label {
         text-transform: capitalize;
     }
 </style>
