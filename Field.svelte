@@ -6,6 +6,7 @@
     export let placeholder = name
     export let errors = []
     export let help = ''
+    export let required = false
 </script>
 
 <fieldset class="field">
@@ -14,13 +15,13 @@
     {/if}
     <div class='control'>
         {#if type === 'text'}
-            <input type='text' {name} bind:value {placeholder}>
+            <input type='text' {name} bind:value {placeholder} {required}>
         {:else if type === 'password'}
-            <input type='password' {name} bind:value {placeholder}>
+            <input type='password' {name} bind:value {placeholder} {required}>
         {:else if type === 'hidden'}
             <input type='hidden' {name} bind:value={value} {placeholder}>
         {:else}
-            <input type='text' {name} bind:value={value} {placeholder}>
+        <input type='text' {name} bind:value={value} {placeholder} {required}>
         {/if}
     </div>
     {#if errors.length}
