@@ -16,6 +16,8 @@
     <div class='control'>
         {#if type === 'text'}
             <input type='text' {name} bind:value {placeholder} {required}>
+        {:else if type === 'email'}
+            <input type='email' {name} bind:value {placeholder} {required}>
         {:else if type === 'password'}
             <input type='password' {name} bind:value {placeholder} {required}>
         {:else if type === 'hidden'}
