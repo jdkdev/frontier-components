@@ -10,9 +10,6 @@
 </script>
 
 <fieldset class="field">
-    {#if label != 'display-none'}
-        <label for={name}>{label}</label>
-    {/if}
     <div class='control'>
         {#if type === 'text'}
             <input type='text' {name} bind:value {placeholder} {required}>
@@ -24,6 +21,9 @@
             <input type='hidden' {name} bind:value={value} {placeholder}>
         {:else}
         <input type='text' {name} bind:value={value} {placeholder} {required}>
+        {/if}
+        {#if label != 'display-none'}
+            <label for={name}>{label}</label>
         {/if}
     </div>
     {#if errors.length}
